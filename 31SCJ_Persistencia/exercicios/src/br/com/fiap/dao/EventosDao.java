@@ -7,7 +7,7 @@ import br.com.fiap.entity.Evento;
 public class EventosDao extends Dao<Evento> {
 
 	@Override
-	public void Incluir(Evento elemento) throws Exception {
+	public void incluir(Evento elemento) throws Exception {
 		try {
 			abrirConexao();
 			String sql = "insert into eventos (descricao, data, responsavel) values (?, ?, ?)";

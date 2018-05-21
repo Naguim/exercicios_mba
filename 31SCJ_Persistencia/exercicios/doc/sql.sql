@@ -14,7 +14,7 @@ create table eventos (
 create table participantes (
 	id int not null AUTO_INCREMENT,
     idevento varchar(45),
-    nome datetime not null,
+    nome varchar(45) not null,
     email varchar(45) not null, 
     PRIMARY KEY (idevento,id),
     FOREIGN KEY (idevento)
