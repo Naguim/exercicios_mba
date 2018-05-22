@@ -24,7 +24,7 @@ public class Evento {
 	@Column(name="responsavel", length=45)
 	private String responsavel;
 	
-	@OneToMany(cascade=CascadeType.ALL, fetch = FetchType.LAZY, mappedBy="idevento")
+	@OneToMany(cascade=CascadeType.ALL, fetch = FetchType.LAZY, mappedBy="evento")
 	private Set<Participante> participantes = new HashSet<>();
 	
 	public int getId() {

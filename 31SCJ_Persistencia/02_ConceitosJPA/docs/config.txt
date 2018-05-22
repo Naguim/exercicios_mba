@@ -1,0 +1,3 @@
+RUN CONFIGURATION
+   Arguments
+	VM_Arguments: --add-modules java.xml.bind

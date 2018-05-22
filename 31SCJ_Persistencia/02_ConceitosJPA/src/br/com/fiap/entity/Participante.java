@@ -14,8 +14,8 @@ public class Participante {
 	private int id;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name="IDEVENTO")
-	private Evento idevento;
+	@JoinColumn(name="idevento")
+	private Evento evento;
 	
 	@Column(name="nome", length=45)
 	private String nome;
@@ -29,11 +29,11 @@ public class Participante {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public Evento getIdevento() {
-		return idevento;
+	public Evento getEvento() {
+		return evento;
 	}
-	public void setIdevento(Evento idevento) {
-		this.idevento = idevento;
+	public void setEvento(Evento evento) {
+		this.evento = evento;
 	}
 	public String getNome() {
 		return nome;
