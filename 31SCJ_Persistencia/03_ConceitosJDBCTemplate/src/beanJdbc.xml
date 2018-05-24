@@ -24,5 +24,7 @@
 	<bean id="jdbcDisciplinaDao" class="br.com.fiap.jdbc.JdbcDisciplinaDao">
 		<property name="dataSource" ref="cnDataSource" />
 	</bean>
-
+	<bean id="jdbcEscolaCursoDao" class="br.com.fiap.jdbc.JdbcEscolaCursoDao">
+		<property name="dataSource" ref="cnDataSource" />
+	</bean>
 </beans>

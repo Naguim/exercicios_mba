@@ -8,15 +8,15 @@ import br.com.fiap.entidades.Curso;
 import br.com.fiap.entidades.Escola;
 import br.com.fiap.jdbc.JdbcCursoDao;
 
-//import br.com.fiap.jdbc.JdbcEscolaCursoDao;
+import br.com.fiap.jdbc.JdbcEscolaCursoDao;
 import br.com.fiap.jdbc.JdbcEscolaDao;
-//import br.com.fiap.viewmodel.EscolaCursoViewModel;
+import br.com.fiap.viewmodel.EscolaCursoViewModel;
 
 public class AppEscola {
 	public static void main(String[] args) {
-		incluirEscola();
-		// incluirCurso();
-		//listarEscolasComCursos();
+		//incluirEscola();
+		//incluirCurso();
+		listarEscolasComCursos();
 	}
 
 	private static void incluirEscola() {
@@ -49,7 +49,23 @@ public class AppEscola {
 			curso.setEscola(escola);
 
 			dao.incluirCurso(curso);
-			JOptionPane.showMessageDialog(null, "Curso incluída com sucesso");
+			JOptionPane.showMessageDialog(null, "Curso incluído com sucesso");
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	private static void listarEscolasComCursos() {
+		try {
+			ApplicationContext context = new ClassPathXmlApplicationContext("beanJdbc.xml");
+			List<EscolaCursoViewModel> escolas = ((JdbcEscolaCursoDao) context.getBean("jdbcEscolaCursoDao"))
+					.listarEscolasComCursos();
+
+			for (EscolaCursoViewModel vm : escolas) {
+				System.out.println("Escola: " + vm.getDescricao());
+				System.out.println("Num. Cursos: " + vm.getNumCursos());
+			}
 
 		} catch (Exception e) {
 			e.printStackTrace();

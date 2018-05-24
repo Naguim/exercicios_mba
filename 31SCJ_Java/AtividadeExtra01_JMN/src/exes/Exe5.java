@@ -1,10 +1,7 @@
 package exes;
 
 public class Exe5 {
-	/**
-	 * @param
-	 * @return 
-	 */
+
 	public int fatorial(int num) {
 		int acumulado = 1;
 		

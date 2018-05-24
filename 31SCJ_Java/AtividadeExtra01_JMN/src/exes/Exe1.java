@@ -1,9 +1,6 @@
 package exes;
 public class Exe1 {
-	/**
-	 * @param
-	 * @return 
-	 */
+
 	public int[] inverteArray(int[] array) {
 		int[] arrayInverso = new int[array.length];
 		int index = 0;
