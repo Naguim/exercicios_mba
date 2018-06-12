@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="fiap31scjService" targetNamespace="http://fiap.com.br/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://fiap.com.br/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+    <schema xmlns="http://www.w3.org/2001/XMLSchema">
+  <import namespace="http://fiap.com.br/" schemaLocation="fiap31scj_schema1.xsd"/>
+</schema>
+  </wsdl:types>
+  <wsdl:message name="WhatIsTheAnswerResponse">
+    <wsdl:part name="parameters" element="tns:WhatIsTheAnswerResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="WhatIsTheAnswer">
+    <wsdl:part name="parameters" element="tns:WhatIsTheAnswer">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="fiap31scjSEI">
+    <wsdl:operation name="WhatIsTheAnswer">
+      <wsdl:input name="WhatIsTheAnswer" message="tns:WhatIsTheAnswer">
+    </wsdl:input>
+      <wsdl:output name="WhatIsTheAnswerResponse" message="tns:WhatIsTheAnswerResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="fiap31scjServiceSoapBinding" type="tns:fiap31scjSEI">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="WhatIsTheAnswer">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="WhatIsTheAnswer">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="WhatIsTheAnswerResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="fiap31scjService">
+    <wsdl:port name="fiap31scjPort" binding="tns:fiap31scjServiceSoapBinding">
+      <soap:address location="http://localhost:8080/HelloCXF/services/fiap31scjPort"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

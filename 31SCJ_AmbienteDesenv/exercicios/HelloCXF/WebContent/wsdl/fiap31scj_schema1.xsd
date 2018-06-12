@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?><xs:schema xmlns:tns="http://fiap.com.br/" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="unqualified" targetNamespace="http://fiap.com.br/" version="1.0">
+<xs:element name="WhatIsTheAnswer" type="tns:WhatIsTheAnswer"/>
+<xs:element name="WhatIsTheAnswerResponse" type="tns:WhatIsTheAnswerResponse"/>
+<xs:complexType name="WhatIsTheAnswer">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="WhatIsTheAnswerResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
