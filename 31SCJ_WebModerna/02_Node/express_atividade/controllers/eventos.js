@@ -21,6 +21,16 @@ module.exports = function (app) {
             var usuario = request.session.usuario,
                 params = { usuario: usuario };
             response.render('eventos/listaEventos', params);
+        },
+        //cadastro de eventos
+        novoEvento: function (request, response) {
+            var descricao = request.body.evento.descricao;
+            var data = request.body.evento.data.split('/');
+            //formato dd/MM/yyyy
+            var objDate = new Date(data[2], data[1] - 1, data[0]);
+            var responsavel = request.body.evento.responsavel;
+            //código a ser implementado
+            response.redirect('/menu');
         }
     };
     return EventosController;
