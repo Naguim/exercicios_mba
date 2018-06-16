@@ -10,8 +10,8 @@ module.exports = function (app) {
             var nome = req.body.usuario.nome;
             var senha = req.body.usuario.senha;
 
-
-            Usuario.findOne().select('nome senha')
+            var query = {'nome' :nome, 'senha':senha};
+            Usuario.findOne(query).select('nome senha')
                 .exec(function (erro, usuario) {
                     if (erro) {
                         res.redirect('/');
