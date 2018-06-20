@@ -9,7 +9,7 @@
                 <input type="text" #busca (keyup)="0" class="form-control" >
             </div>
             <ul class="list_group">
-                <li *ngFor="let item of listaEventos | sublista:busca.value" (click)="selecionar(item)" class="list-group-item">
+                <li *ngFor="let item of listaEventos  | sublista:busca.value" (click)="selecionar(item)" class="list-group-item">
                     <a [class.selecionado]="item === eventoSelecionado" [routerLink]="['/eventos']">{{item.descricao | uppercase}}</a>
                 </li>
             </ul>
